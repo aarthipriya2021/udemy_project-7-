@@ -1,21 +1,23 @@
 import React from 'react';
+import { Movie} from './Movie';
+import classes from  './Movie.module.css';
 
-import Movie from './Movie';
-import classes from './MoviesList.module.css';
-
-const MovieList = (props) => {
+export const MoviesList = (props) => {
   return (
-    <ul className={classes['movies-list']}>
-      {props.movies.map((movie) => (
-        <Movie
-          key={movie.id}
-          title={movie.title}
-          releaseDate={movie.release}
-          openingText={movie.openingText}
-        />
-      ))}
-    </ul>
-  );
-};
+    
+      <ul className={classes['movies-list']}>
+        {props.movies.map((movie) => (
+          <Movie
+            key={movie.id}
+            title={movie.title}
+            releaseDate={movie.releaseDate}
+            openingText={movie.openingText}
+          />
+        ))}
 
-export default MovieList;
+      </ul>
+   
+  )
+}
+
+export default MoviesList
